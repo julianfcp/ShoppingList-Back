@@ -1,11 +1,17 @@
 // to run mongo --> mongodb in terminal
 // mongod --config /usr/local/etc/mongod.conf --fork
+
 const mongoose = require('mongoose');
 
 // direccion donde estara mi db
-const URI = process.env.MONGODB_URI 
+/*const URI = process.env.MONGODB_URI 
     ? process.env.MONGODB_URI 
+    : 'mongodb://localhost/databasetest';*/
+
+const URI = process.env.MONGO_ONLINE_URI
+    ? process.env.MONGO_ONLINE_URI
     : 'mongodb://localhost/databasetest';
+
 
 // parametros para conectarse a la db
 mongoose.connect(URI, {
