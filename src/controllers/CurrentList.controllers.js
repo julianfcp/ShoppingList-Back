@@ -20,7 +20,7 @@ CurrentlistCtrl.createCurrentListItem = async (req, res) => {
     });
     await newCurrentListItem.save(); // se guarda la nota
     console.log(newCurrentListItem);
-    res.json({message: 'CurrentListItem Created'});
+    res.json({success: true, message: 'CurrentListItem Created'});
 }
 CurrentlistCtrl.updateCurrentListItem = async (req, res) => {
     const {title, content, author} = req.body;
