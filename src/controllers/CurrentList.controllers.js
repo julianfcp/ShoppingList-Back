@@ -23,15 +23,13 @@ CurrentlistCtrl.createCurrentListItem = async (req, res) => {
     res.json({success: true, message: 'CurrentListItem Created'});
 }
 CurrentlistCtrl.updateCurrentListItem = async (req, res) => {
-    const {title, content, author} = req.body;
+    const {itemName, itemStatus} = req.body;
     // para usar findOneAndUpdate debo cambiar la configuracion en
     // archivo database.js --> useFindAndModify: false
     await CurrentListItem.findOneAndUpdate({_id: req.params.id}, {
-        title,
-        content,
-        author
+        itemName,
+        itemStatus
     });
-    console.log(content);
     res.json({Message: 'CurrentListItem: '+req.params.id+' Updated'});
 }
 
