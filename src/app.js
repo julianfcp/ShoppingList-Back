@@ -25,6 +25,7 @@ app.use(express.json()); // habilitar envio de files formato json
 
 app.use('/api/users', (req, res) => res.send('Hello World!'));
 app.use('/api/currentList', require('./routes/CurrentList'));
-//app.use('/api/notes', require('./routes/notes'));
+app.use('/api/lists', require('./routes/Lists'));
+app.use('/api/listItems', require('./routes/ListsItems'));
 
 module.exports = app;
